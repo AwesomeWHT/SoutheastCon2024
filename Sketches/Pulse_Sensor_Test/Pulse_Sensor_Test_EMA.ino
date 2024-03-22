@@ -134,5 +134,7 @@ void RotaryStateChanged()  //When CLK FALLING READ DAT
 
 int old_ema = 700;
 int EMA(int value) {
-    return value / 10 + old_ema * 9 / 10;
+    int ema = value / 10 + old_ema * 9 / 10;
+	old_ema = ema;
+	return ema;
 }
